@@ -104,3 +104,14 @@ After training 35000 steps using vox1 dataset, this model caught similarity betw
 ## Current Issues
 
 - [@jaekukang](https://github.com/jaekookang) cloned this repository and he trained this model successfully. In inference.py, however, he found a bug. I fixed the bug.
+
+##  主要是安装tensorflow-gpu ，按照提示缺少什么就装什么。
+
+##  wav->pickle profercess.py 这里面需要自己在wavs目录下创建一个pickle文件夹所有的方言输出结果都保存在pickle里。
+
+python preprocess.py --in_dir /home/jiang/wj/Dialect-recog-classification/wavs/hebei-wav --pk_dir /home/jiang/wj/Dialect-recog-classification/wavs/pickle --data_type hebei-wav
+
+##  train.py
+python train.py --in_dir /home/ninas96211/data/pickle --ckpt_dir ./ckpt
+
+## 目前就到这一步，显卡不够用，我的batch=16，训练有些慢，先训练40000步看
